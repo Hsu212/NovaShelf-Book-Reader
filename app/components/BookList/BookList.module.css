@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.noBooksMessage {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 3rem;
+    color: var(--accent-color);
+}

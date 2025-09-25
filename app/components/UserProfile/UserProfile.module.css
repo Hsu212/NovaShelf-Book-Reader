@@ -1,0 +1,28 @@
+.profileContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 2px solid var(--accent-color);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.userEmail {
+  font-size: 0.8rem;
+  color: var(--text-secondary-color);
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Default theme (Light Mode) */
+:root {
+  --background-start: #ffffff; 
+  --background-end: #e4e4e7;
+  --primary-color: #ffffff;
+  --secondary-color: #e4e4e7;
+  --accent-color: #7c3aed;
+  --accent-glow: rgba(124, 58, 237, 0.2);
+  --text-color: #111827;
+  --text-secondary-color: rgba(17, 24, 39, 0.7);
+  --card-background: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(0, 0, 0, 0.1);
+
+  /* CHANGE THIS LINE for light mode */
+  --title-color: #311B92; /* Very Dark Violet */
+  --title-shadow-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark Mode theme override */
+[data-theme='dark'] {
+  --background-start: #0d0c22;
+  --background-end: #1a1a3a;
+  --primary-color: #1a1a3a;
+  --secondary-color: #2a2a55;
+  --accent-color: #9f5afd;
+  --accent-glow: rgba(159, 90, 23, 0.3);
+  --text-color: #e0e0e0;
+  --text-secondary-color: rgba(224, 224, 224, 0.7);
+  --card-background: rgba(26, 26, 58, 0.5);
+  --card-border: rgba(159, 90, 253, 0.2);
+
+  /* Titles in dark mode are already white for contrast, which is ideal. */
+  --title-color: #ffffff;
+  --title-shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes for the animation (unchanged) */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Base styles that use the variables */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+  min-height: 100vh;
+  transition: color 0.3s;
+  background: linear-gradient(-45deg, var(--background-start), var(--background-end), var(--accent-color), var(--primary-color));
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* UPDATED: Title styles for readability */
+.main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: -1px;
+
+  /* NEW: Solid color for readability */
+  color: var(--title-color);
+  
+  /* NEW: Text shadow to make it "pop" from the animated background */
+  text-shadow: 0px 4px 10px var(--title-shadow-color);
+
+  /* REMOVED: All gradient text properties have been removed */
+}

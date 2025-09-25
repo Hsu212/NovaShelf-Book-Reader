@@ -1,0 +1,25 @@
+.menuButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100; /* Stays on top of content */
+  background: var(--card-background);
+  border: 1px solid var(--card-border);
+  color: var(--text-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.menuButton:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px var(--accent-glow);
+}

@@ -1,0 +1,52 @@
+/* ... (keep all existing styles) ... */
+
+.actions {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  gap: 1rem;
+  align-items: center;
+}
+
+/* Existing .libraryButton style (no change needed here, it's already violet) */
+.libraryButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--accent-color); /* Violet for library button */
+  border: 2px solid var(--accent-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.libraryButton:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+/* NEW: Style for the "Add to Favorites" button on the details page */
+.favoriteButtonDetails {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #c3a1f7; /* Lighter violet for favorites button */
+  border: 2px solid #c3a1f7; /* Match border color */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.favoriteButtonDetails:hover {
+  background-color: #c3a1f7;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(195, 161, 247, 0.5); /* Violet glow */
+}

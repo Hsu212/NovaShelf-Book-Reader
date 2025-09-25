@@ -1,0 +1,91 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1200;
+  backdrop-filter: blur(5px);
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: var(--background-start);
+  z-index: 1300;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--secondary-color);
+}
+
+.drawer.open {
+  transform: translateX(0);
+  box-shadow: 10px 0px 30px rgba(0,0,0,0.5);
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: var(--text-secondary-color);
+  cursor: pointer;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.closeButton:hover {
+    color: var(--accent-color);
+    transform: rotate(90deg);
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+}
+
+.navLink {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    font-size: 1.1rem;
+    color: var(--text-secondary-color);
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navLink:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+/* ... (keep all existing styles) ... */
+
+.signInPrompt {
+  padding: 20px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.signInLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.signInLink:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
