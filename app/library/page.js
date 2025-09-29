@@ -1,8 +1,7 @@
-'use client'; // This page now needs client-side data from the context
+'use client'; 
 
 import { useFavorites } from '../context/FavoritesContext';
-import BookList from '../components/BookList/BookList'; // Reuse our BookList component!
-
+import BookList from '../components/BookList/BookList';
 export default function LibraryPage() {
   const { favoriteBooks } = useFavorites();
 
