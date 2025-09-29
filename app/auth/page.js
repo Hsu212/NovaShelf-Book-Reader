@@ -51,10 +51,10 @@ export default function AuthPage() {
           {isLoginView ? 'Welcome Back' : 'Create Account'}
         </h1>
         <p className={styles.subtitle}>
-          {isLoginView ? 'Sign in to continue' : 'Get started with BookVerse'}
+          {isLoginView ? 'Sign in to continue' : 'Get started with NovaShelf'}
         </p>
 
-        {error && <p /* Add error styles if you wish */>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
 
         <form onSubmit={handleSubmit} className={styles.form}>
           {!isLoginView && (
