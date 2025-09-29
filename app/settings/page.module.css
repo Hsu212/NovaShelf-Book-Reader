@@ -28,7 +28,6 @@
   font-size: 1.1rem;
 }
 
-/* Theme Toggle Styles */
 .themeToggle {
   display: flex;
   align-items: center;
@@ -79,7 +78,6 @@ input:checked + .slider:before {
   transform: translateX(22px);
 }
 
-/* Danger Button Styles */
 .dangerButton {
   display: flex;
   align-items: center;
