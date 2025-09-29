@@ -9,10 +9,8 @@ export const useTheme = () => {
 };
 
 export const ThemeProvider = ({ children }) => {
-  // Default to 'dark' theme if no preference is found
   const [theme, setTheme] = useState('dark');
 
-  // On initial load, check localStorage and user's system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -20,7 +18,6 @@ export const ThemeProvider = ({ children }) => {
     }
   }, []);
 
-  // Apply the theme to the <html> element whenever it changes
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
