@@ -33,14 +33,13 @@ export const FavoritesProvider = ({ children }) => {
       if (error) {
         console.error('Error fetching library:', error);
       } else {
-        // The data is just the book object, which is what we need
         setFavoriteBooks(data.map(item => item.book_data));
       }
       setLoading(false);
     };
 
     fetchLibrary();
-  }, [user]); // Re-fetch when the user logs in or out
+  }, [user]); 
 
   const addBook = async (book) => {
     if (!user) return;
@@ -80,7 +79,6 @@ export const FavoritesProvider = ({ children }) => {
     return favoriteBooks.some(book => book.id === bookId);
   };
 
-  // You can add the clearLibrary function similarly, using a delete query
   
   const value = { favoriteBooks, addBook, removeBook, isFavorite, loading };
 
