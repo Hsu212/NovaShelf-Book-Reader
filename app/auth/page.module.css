@@ -64,7 +64,7 @@
 
 .inputField {
   width: 100%;
-  padding: 14px 14px 14px 45px; /* Left padding for icon */
+  padding: 14px 14px 14px 45px; 
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 8px;
