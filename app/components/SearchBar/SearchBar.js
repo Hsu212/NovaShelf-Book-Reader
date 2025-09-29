@@ -1,4 +1,4 @@
-'use client'; // This component needs to handle user input
+'use client'; 
 
 import styles from './SearchBar.module.css';
 
