@@ -8,7 +8,6 @@ import { useTrueFavorites } from '../../context/TrueFavoritesContext';
 import { FaBookmark, FaRegBookmark, FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export default function BookDetailsClient({ book }) {
-  // Logic for "My Library" button
   const { addBook, removeBook, isFavorite } = useFavorites();
   const isSavedInLibrary = isFavorite(book.id);
 
@@ -20,7 +19,6 @@ export default function BookDetailsClient({ book }) {
     }
   };
 
-  // CORRECTED LINE: Directly destructuring the correct function names
   const { addFavorite, removeFavorite, isFavorite: isTrulyFavorite } = useTrueFavorites();
   const isSavedAsFavorite = isTrulyFavorite(book.id);
 
@@ -28,7 +26,7 @@ export default function BookDetailsClient({ book }) {
     if (isSavedAsFavorite) {
       removeFavorite(book.id);
     } else {
-      addFavorite(book); // This will now work correctly
+      addFavorite(book); 
     }
   };
 
@@ -60,9 +58,11 @@ export default function BookDetailsClient({ book }) {
             <p><strong>Pages:</strong> {book.pages}</p>
           </div>
           <div className={styles.actions}>
-            <a href={book.download} target="_blank" rel="noopener noreferrer" className={styles.downloadButton}>
-              Download PDF
-            </a>
+
+          
+          <a href={book.download} target="_blank" rel="noopener noreferrer" className={styles.downloadButton}>
+            Download PDF
+          </a>
             <button onClick={handleToggleLibrary} className={styles.libraryButton}>
               {isSavedInLibrary ? <FaBookmark /> : <FaRegBookmark />}
               {isSavedInLibrary ? 'Remove from Library' : 'Add to Library'}
