@@ -1,7 +1,7 @@
 'use client';
 
 import styles from './MenuButton.module.css';
-import { FiMenu } from 'react-icons/fi'; // Icon from react-icons
+import { FiMenu } from 'react-icons/fi'; 
 
 export default function MenuButton({ onClick }) {
   return (
