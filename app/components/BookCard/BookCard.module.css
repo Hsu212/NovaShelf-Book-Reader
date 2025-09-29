@@ -1,7 +1,5 @@
-/* ... (keep existing card, imageContainer, cardContent, title, authors styles) ... */
-
 .card {
-  position: relative; /* Needed to position the button */
+  position: relative;
   background: var(--card-background);
   backdrop-filter: blur(10px);
   border-radius: 12px;
@@ -21,7 +19,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  padding-top: 140%; /* Aspect ratio for the image */
+  padding-top: 140%; 
 }
 
 .cardContent {
@@ -44,10 +42,8 @@
   font-style: italic;
 }
 
-
-/* Re-position the single library button */
 .libraryButton {
-  position: absolute; /* Re-add positioning */
+  position: absolute; 
   top: 10px;
   right: 10px;
   z-index: 10;
@@ -73,5 +69,3 @@
 .libraryButton svg {
   font-size: 1.2rem;
 }
-
-/* REMOVED: .favoriteButton and .buttonContainer styles */
