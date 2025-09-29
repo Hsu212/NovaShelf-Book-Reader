@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { supabase } from '@/app/lib/supabaseClient';
+import { supabase } from '@/lib/supabaseClient';
 import { useAuth } from '@/app/context/AuthContext';
 import Image from 'next/image';
 import styles from './page.module.css';
@@ -52,17 +52,16 @@ export default function ProfilePage() {
 
       const { error: uploadError } = await supabase.storage
         .from('avatars')
-        .upload(filePath, file, { upsert: true }); // upsert: true overwrites the file
+        .upload(filePath, file, { upsert: true }); 
 
       if (uploadError) throw uploadError;
 
-      // Get the public URL of the uploaded file
       const { data: { publicUrl } } = supabase.storage
         .from('avatars')
         .getPublicUrl(filePath);
 
       setAvatarUrl(publicUrl);
-      // Also update the profile table
+
       await supabase.from('profiles').update({ avatar_url: publicUrl }).eq('id', user.id);
 
     } catch (error) {
@@ -96,7 +95,7 @@ export default function ProfilePage() {
             width={150}
             height={150}
             className={styles.avatar}
-            key={avatarUrl} // Add key to force re-render on URL change
+            key={avatarUrl} 
           />
           <label htmlFor="file-input" className={styles.uploadButton}>
             {uploading ? 'Uploading...' : 'Upload New Picture'}
