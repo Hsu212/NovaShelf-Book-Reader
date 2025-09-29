@@ -5,9 +5,8 @@ import SideDrawer from './components/SideDrawer/SideDrawer';
 import MenuButton from './components/MenuButton/MenuButton';
 import { FavoritesProvider } from './context/FavoritesContext';
 import { TrueFavoritesProvider } from './context/TrueFavoritesContext';
-import { ThemeProvider } from './context/ThemeContext'; // Import the new provider
-import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
-
+import { ThemeProvider } from './context/ThemeContext'; 
+import { AuthProvider } from './context/AuthContext'; 
 export default function MainLayout({ children }) {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
@@ -15,7 +14,7 @@ export default function MainLayout({ children }) {
   const closeDrawer = () => setDrawerOpen(false);
 
    return (
-    <AuthProvider> {/* Wrap everything */}
+    <AuthProvider> 
       <ThemeProvider>
         <TrueFavoritesProvider>
           <FavoritesProvider>
