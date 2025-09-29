@@ -8,7 +8,7 @@ export default function FavoritesPage() {
 
   return (
     <div>
-      <h1 className="main-title">My Favorites ❤️</h1>
+      <h1 className="main-title">My Favorites ♥︎ </h1>
       {trueFavoriteBooks.length > 0 ? (
         <BookList books={trueFavoriteBooks} />
       ) : (
