@@ -3,11 +3,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './BookCard.module.css';
-import { FaBookmark, FaRegBookmark } from 'react-icons/fa'; // Only bookmark icons now
+import { FaBookmark, FaRegBookmark } from 'react-icons/fa'; 
 import { useFavorites } from '../../context/FavoritesContext';
 
 export default function BookCard({ book }) {
-  // State for "My Library" (Bookmark icon)
   const { addBook, removeBook, isFavorite } = useFavorites();
   const isSavedInLibrary = isFavorite(book.id);
 
@@ -21,11 +20,9 @@ export default function BookCard({ book }) {
     }
   };
   
-  // REMOVED: handleToggleFavorite and useTrueFavorites import
 
   return (
     <Link href={`/book/${book.id}`} className={styles.card}>
-      {/* Only the library button remains here */}
       <button onClick={handleToggleLibrary} className={styles.libraryButton}>
         {isSavedInLibrary ? <FaBookmark color="#9f5afd" /> : <FaRegBookmark />}
       </button>
