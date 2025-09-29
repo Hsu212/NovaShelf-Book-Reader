@@ -2,7 +2,7 @@
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 1100; /* Stays on top of content */
+  z-index: 1100; 
   background: var(--card-background);
   border: 1px solid var(--card-border);
   color: var(--text-color);
