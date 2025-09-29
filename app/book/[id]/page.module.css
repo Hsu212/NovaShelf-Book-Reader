@@ -1,13 +1,141 @@
-/* ... (keep all existing styles) ... */
+.bookDetailsContainer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  z-index: 900;
+}
+
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.backLink {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
+  color: #e3e2e2;
+  z-index: 900;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: #ffffff;
+}
+
+.bookTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--accent-color), #d4a5ff, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  text-shadow: 0 3px 10px var(--accent-glow);
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  letter-spacing: -0.5px;
+}
+
+.bookTitle:hover {
+  transform: scale(1.03);
+  text-shadow: 0 5px 15px var(--accent-glow);
+}
+
+.bookCard {
+  background: var(--card-background, rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 900;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.bookImage {
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookImage:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+.bookInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  max-width: 600px;
+}
+
+.bookInfo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.bookInfo p {
+  margin: 0;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--text-secondary-color);
+  transition: color 0.3s ease;
+}
+
+.bookInfo p:hover {
+  color: var(--text-color);
+}
+
+.bookInfo strong {
+  background: linear-gradient(45deg, var(--accent-color), #a77ef2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.bookInfo strong:hover {
+  transform: translateX(3px);
+}
 
 .actions {
   display: flex;
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  flex-wrap: wrap;
   gap: 1rem;
   align-items: center;
 }
 
-/* Existing .libraryButton style (no change needed here, it's already violet) */
 .libraryButton {
   display: flex;
   align-items: center;
@@ -17,19 +145,18 @@
   font-weight: 700;
   border-radius: 8px;
   background-color: transparent;
-  color: var(--accent-color); /* Violet for library button */
-  border: 2px solid var(--accent-color);
+  color: #c3a1f7; 
+  border: 2px solid #c3a1f7; 
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .libraryButton:hover {
-  background-color: var(--accent-color);
+  background-color: #c3a1f7; 
   color: #fff;
-  box-shadow: 0 0 15px var(--accent-glow);
+  box-shadow: 0 0 15px rgba(195, 161, 247, 0.5); 
 }
 
-/* NEW: Style for the "Add to Favorites" button on the details page */
 .favoriteButtonDetails {
   display: flex;
   align-items: center;
@@ -39,8 +166,8 @@
   font-weight: 700;
   border-radius: 8px;
   background-color: transparent;
-  color: #c3a1f7; /* Lighter violet for favorites button */
-  border: 2px solid #c3a1f7; /* Match border color */
+  color: #c3a1f7;
+  border: 2px solid #c3a1f7;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -48,5 +175,28 @@
 .favoriteButtonDetails:hover {
   background-color: #c3a1f7;
   color: #fff;
-  box-shadow: 0 0 15px rgba(195, 161, 247, 0.5); /* Violet glow */
+  box-shadow: 0 0 15px rgba(195, 161, 247, 0.5);
+}
+
+.downloadButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  background-color: transparent; 
+  color: #c3a1f7;
+  border: 2px solid #c3a1f7;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.downloadButton:hover {
+  background-color: #c3a1f7; 
+  color: #fff;
+  box-shadow: 0 0 15px rgba(195, 161, 247, 0.5);
 }
