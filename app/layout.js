@@ -1,8 +1,8 @@
 import './globals.css';
-import MainLayout from './MainLayout'; // Import the new layout wrapper
+import MainLayout from './MainLayout'; 
 
 export const metadata = {
-  title: 'BookVerse | Find Your Next Read',
+  title: 'NovaShelf | Find Your Next Read',
   description: 'A modern web app for discovering and reading books.',
 };
 
@@ -10,7 +10,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <MainLayout> {/* Wrap the content with MainLayout */}
+        <MainLayout> 
           <main className="container">
             {children}
           </main>
