@@ -1,4 +1,3 @@
-// In app/components/UserProfile/UserProfile.js
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -35,7 +34,7 @@ export default function UserProfile() {
 
   const userName = profile?.username || user.email.split('@')[0];
   const userEmail = user.email;
-  const avatarUrl = profile?.avatar_url || '/avatar.png'; // Use fetched URL or fallback
+  const avatarUrl = profile?.avatar_url || '/avatar.png'; 
 
   return (
     <div className={styles.profileContainer}>
@@ -45,7 +44,7 @@ export default function UserProfile() {
         width={60}
         height={60}
         className={styles.avatar}
-        key={avatarUrl} // Force re-render on change
+        key={avatarUrl} 
       />
       <div className={styles.userInfo}>
         <p className={styles.userName}>{userName}</p>
