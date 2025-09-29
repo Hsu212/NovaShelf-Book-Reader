@@ -23,7 +23,6 @@ export default function SettingsPage() {
     <div>
       <h1 className="main-title">Settings</h1>
       <div className={styles.settingsContainer}>
-        {/* Appearance Settings */}
         <div className={styles.settingCard}>
           <h2 className={styles.cardTitle}>Appearance</h2>
           <div className={styles.settingItem}>
@@ -43,7 +42,6 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        {/* Data Management Settings */}
         <div className={styles.settingCard}>
           <h2 className={styles.cardTitle}>Data Management</h2>
           <div className={styles.settingItem}>
@@ -54,7 +52,6 @@ export default function SettingsPage() {
           </div>
         </div>
 
-        {/* About Section */}
         <div className={styles.settingCard}>
           <h2 className={styles.cardTitle}>About</h2>
           <div className={styles.settingItem}>
