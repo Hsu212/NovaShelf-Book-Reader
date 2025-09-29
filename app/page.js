@@ -1,10 +1,9 @@
-'use client'; // This page interacts with user search
+'use client'; 
 
 import { useState, useEffect } from 'react';
 import SearchBar from './components/SearchBar/SearchBar';
 import BookList from './components/BookList/BookList';
 
-// Helper function to fetch books from the API
 async function fetchBooks(url) {
   try {
     const response = await fetch(url);
@@ -13,7 +12,7 @@ async function fetchBooks(url) {
     return data.books || [];
   } catch (error) {
     console.error("Failed to fetch books:", error);
-    return []; // Return empty array on error
+    return []; 
   }
 }
 
@@ -21,7 +20,6 @@ export default function HomePage() {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Fetch recent books on initial load
   useEffect(() => {
     async function loadRecentBooks() {
       const recentBooks = await fetchBooks('https://www.dbooks.org/api/recent');
@@ -31,7 +29,6 @@ export default function HomePage() {
     loadRecentBooks();
   }, []);
 
-  // Handle the search query
   const handleSearch = async (query) => {
     if (!query) return;
     setIsLoading(true);
@@ -42,7 +39,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1 className="main-title">BookVerse</h1>
+      <h1 className="main-title">NovaShelf</h1>
       <SearchBar onSearch={handleSearch} />
       {isLoading ? <p>Loading books...</p> : <BookList books={books} />}
     </>
