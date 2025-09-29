@@ -70,7 +70,6 @@ export default function SideDrawer({ isOpen, onClose }) {
             <FaCog /> Settings
           </Link>
           
-          {/* ADD THIS SECTION */}
           {user && (
             <Link href="/profile" className={styles.navLink} onClick={onClose}>
               <FaUserEdit /> Edit Profile
